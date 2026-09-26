@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">MixBar</title>
+  <defs>
+    <linearGradient id="g" x1="18" y1="12" x2="112" y2="118" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#74f5a7"/>
+      <stop offset="1" stop-color="#20bdf2"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="#10131a"/>
+  <path d="M29 34h70M29 64h70M29 94h70" fill="none" stroke="#eaf0f6" stroke-width="9" stroke-linecap="round" opacity=".92"/>
+  <circle cx="51" cy="34" r="12" fill="url(#g)"/>
+  <circle cx="82" cy="64" r="12" fill="url(#g)"/>
+  <circle cx="59" cy="94" r="12" fill="url(#g)"/>
+</svg>
