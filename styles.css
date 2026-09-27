@@ -178,10 +178,10 @@ h1 em { color: transparent; background: var(--accent); background-clip: text; fo
 .front-card { top: 170px; padding: 29px; background: linear-gradient(145deg, #232b36, #181e27); }
 .front-card > div:first-child { display: flex; align-items: center; gap: 11px; }
 .front-card small { display: block; margin: 7px 0 28px 18px; color: var(--dim); }
-.large-level { display: grid; grid-template-columns: 1fr 0 auto; align-items: center; gap: 0; height: 7px; border-radius: 99px; background: #3a424d; }
-.large-level span { height: 100%; width: 32%; border-radius: inherit; background: var(--accent); }
-.large-level i { width: 20px; height: 20px; margin-left: -10px; border-radius: 50%; background: white; }
-.large-level b { margin-left: 16px; color: #acb6c0; font-size: 14px; }
+.large-level { position: relative; height: 7px; margin-right: 58px; border-radius: 99px; background: #3a424d; }
+.large-level span { display: block; height: 100%; width: var(--level); border-radius: inherit; background: var(--accent); }
+.large-level i { position: absolute; top: 50%; left: var(--level); width: 20px; height: 20px; border-radius: 50%; background: white; transform: translate(-50%, -50%); box-shadow: 0 3px 10px rgba(0,0,0,.25); }
+.large-level b { position: absolute; top: 50%; left: calc(100% + 16px); color: #acb6c0; font-size: 14px; transform: translateY(-50%); }
 .compatibility-wrap { margin-top: 85px; }
 .compatibility-table { overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.02); }
 .compatibility-row { display: grid; grid-template-columns: .7fr .8fr .8fr 1.7fr; align-items: center; min-height: 66px; border-top: 1px solid var(--line); }
