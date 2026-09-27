@@ -7,11 +7,7 @@ for (const link of checkoutLinks) {
   if (config.checkoutURL) {
     link.href = config.checkoutURL;
     link.rel = "noopener";
-    if (config.paymentProvider === "lemonsqueezy") {
-      link.classList.add("lemonsqueezy-button");
-    } else {
-      link.target = "_blank";
-    }
+    link.target = "_blank";
   } else {
     link.href = `mailto:${supportEmail}?subject=${encodeURIComponent("Reserve the MixBar launch price")}`;
     link.textContent = `Reserve MixBar — ${price}`;
@@ -19,13 +15,10 @@ for (const link of checkoutLinks) {
   }
 }
 
-// Lemon Squeezy's overlay is loaded only after a real checkout URL is set.
-// The links remain normal hosted-checkout links if the overlay cannot load.
-if (config.checkoutURL && config.paymentProvider === "lemonsqueezy") {
-  const checkoutScript = document.createElement("script");
-  checkoutScript.src = "https://app.lemonsqueezy.com/js/lemon.js";
-  checkoutScript.defer = true;
-  document.head.append(checkoutScript);
+if (config.checkoutURL && config.paymentProvider === "stripe") {
+  for (const link of checkoutLinks) {
+    link.setAttribute("aria-label", `Buy MixBar securely with Stripe for ${price}`);
+  }
 }
 
 if (!config.checkoutURL) {

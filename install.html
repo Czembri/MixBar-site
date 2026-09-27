@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1016">
+  <title>Install and set up MixBar</title>
+  <link rel="icon" href="assets/mixbar-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="legal-shell">
+    <a class="brand" href="index.html"><img src="assets/mixbar-mark.svg" alt=""><span>MixBar</span></a>
+    <p class="eyebrow">Start here</p>
+    <h1>Install MixBar from scratch.</h1>
+    <p>Nothing important is hidden. Follow these steps in order and MixBar will explain each permission before macOS asks for it.</p>
+
+    <h2>1. Install the app</h2>
+    <ol>
+      <li>Open <strong>MixBar.dmg</strong> from Downloads.</li>
+      <li>Drag <strong>MixBar</strong> onto the <strong>Applications</strong> shortcut.</li>
+      <li>Eject the MixBar disk image, then open Applications and launch MixBar.</li>
+      <li>Apple’s first-launch dialog should identify MixBar as notarized software. Choose <strong>Open</strong>.</li>
+    </ol>
+
+    <h2>2. Allow app-audio control</h2>
+    <ol>
+      <li>Start music or video in any app.</li>
+      <li>In the MixBar setup guide, choose <strong>Enable Audio</strong>.</li>
+      <li>Approve <strong>System Audio Recording</strong>. Despite the name, MixBar does not use your microphone or save recordings.</li>
+      <li>If access was denied earlier, open <strong>System Settings → Privacy &amp; Security → System Audio Recording</strong>, enable MixBar, and relaunch it.</li>
+    </ol>
+
+    <h2>3. Choose speakers or AirPlay</h2>
+    <ol>
+      <li>Leave Output on <strong>System Default</strong>, or choose a connected device.</li>
+      <li>For AirPlay, first connect the speaker in <strong>System Settings → Sound → Output</strong>.</li>
+      <li>Return to MixBar and choose the speaker under the <strong>AirPlay</strong> section. MixBar enables wireless drift compensation automatically.</li>
+    </ol>
+
+    <h2>4. Optional browser tab controls</h2>
+    <p>Safari setup is built into MixBar. Chrome and Opera use the included MixBar Tab Control extension and require Developer mode while the extension is distributed outside their stores. Open <strong>MixBar → Settings → Browser Tabs</strong> and follow the browser-specific steps shown there.</p>
+
+    <h2>5. Everyday use</h2>
+    <p>MixBar lives in the menu bar. Open it to adjust app and tab volume, mute, EQ, output, and AirPlay. Enable <strong>Start MixBar at login</strong> in Settings if you want it ready after every restart.</p>
+
+    <p class="legal-contact">Still stuck? <a class="support-link" href="mailto:czembri@gmail.com">Email support</a>.</p>
+  </main>
+  <script src="site-config.js"></script>
+  <script>
+    const email = (window.MIXBAR_SITE || {}).supportEmail || "czembri@gmail.com";
+    for (const link of document.querySelectorAll(".support-link")) link.href = `mailto:${email}`;
+  </script>
+</body>
+</html>

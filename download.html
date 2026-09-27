@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#0c1016">
+  <title>Your MixBar download</title>
+  <link rel="icon" href="assets/mixbar-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="legal-shell">
+    <a class="brand" href="index.html"><img src="assets/mixbar-mark.svg" alt=""><span>MixBar</span></a>
+    <p class="eyebrow">Purchase complete</p>
+    <h1>Your Mac is about to sound better.</h1>
+    <p id="download-status">Verifying your Stripe payment…</p>
+    <p><a id="secure-download" class="button button-primary" hidden>Download MixBar</a></p>
+    <div id="download-help" hidden>
+      <h2>Install in four small steps</h2>
+      <ol>
+        <li>Open the downloaded <strong>MixBar DMG</strong>.</li>
+        <li>Drag MixBar into the Applications folder.</li>
+        <li>Open MixBar from Applications and follow its setup guide.</li>
+        <li>Keep this page or open the <a href="install.html">complete installation guide</a>.</li>
+      </ol>
+    </div>
+    <p class="legal-contact">Need help? <a class="support-link" href="mailto:czembri@gmail.com">Email support</a>.</p>
+  </main>
+  <script src="site-config.js"></script>
+  <script>
+    const config = window.MIXBAR_SITE || {};
+    const status = document.querySelector("#download-status");
+    const button = document.querySelector("#secure-download");
+    const help = document.querySelector("#download-help");
+    const sessionID = new URLSearchParams(location.search).get("session_id");
+    if (!sessionID) {
+      status.textContent = "This download link is missing its Stripe Checkout Session. Use the link from your payment confirmation or contact support.";
+    } else if (!config.fulfillmentURL) {
+      status.textContent = "The secure download service is not live yet. Your payment is safe—contact support and include your Stripe receipt email.";
+    } else {
+      const endpoint = new URL(config.fulfillmentURL);
+      endpoint.searchParams.set("session_id", sessionID);
+      button.href = endpoint.toString();
+      button.hidden = false;
+      help.hidden = false;
+      status.textContent = "Your checkout link is ready. Choose Download MixBar to verify payment with Stripe and start the private download.";
+    }
+    for (const link of document.querySelectorAll(".support-link")) {
+      link.href = `mailto:${config.supportEmail || "czembri@gmail.com"}`;
+    }
+  </script>
+</body>
+</html>
