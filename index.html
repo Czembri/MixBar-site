@@ -159,6 +159,11 @@
           <h3>Master control</h3>
           <p>Turn every controlled app up or down together, or mute the whole mix while keeping each app’s balance intact.</p>
         </article>
+        <article class="feature-card reveal">
+          <div class="feature-icon">≋</div>
+          <h3>EQ every app</h3>
+          <p>Shape Bass, Mid, and Treble independently for each process. Start with a preset or build a mix that MixBar remembers.</p>
+        </article>
       </div>
     </section>
 
@@ -178,6 +183,7 @@
               <li>One-click mute for any app</li>
               <li>Custom names for apps and background processes</li>
               <li>Saved volume, mute, and custom-name settings</li>
+              <li>Per-app three-band EQ with useful presets</li>
               <li>Automatic grouping of helper and child processes</li>
               <li>Live indicator for apps currently making sound</li>
             </ul>
@@ -306,6 +312,7 @@
           <p class="regular-price">Regular price $24 after launch</p>
           <ul>
             <li>Per-app volume and mute</li>
+            <li>Per-app Bass, Mid, and Treble EQ</li>
             <li>Safari, Chrome, and Opera tab controls</li>
             <li>Saved names and volume levels</li>
             <li>Output routing and start at login</li>
@@ -325,6 +332,7 @@
         <details><summary>Why does MixBar need System Audio Recording access?</summary><p>That is Apple’s name for the permission used to access an app’s outgoing audio stream. MixBar uses it only to change volume locally. Microphone audio is never requested or captured.</p></details>
         <details><summary>Does every browser support individual tab volume?</summary><p>Safari works with standard HTML audio and video. Chrome and Opera use the optional MixBar extension and require you to choose which tabs to control. Firefox is controlled at the application level.</p></details>
         <details><summary>Will MixBar remember my settings?</summary><p>Yes. App settings are stored by bundle identifier, while supported browser-tab settings are remembered by URL.</p></details>
+        <details><summary>Can every app have different EQ settings?</summary><p>Yes. Open the EQ popup beside any process and adjust Bass, Mid, and Treble from −12 dB to +12 dB. MixBar saves the curve separately for that app.</p></details>
         <details><summary>Will it work with my Mac?</summary><p>MixBar requires macOS 14.2 or later and includes native support for both Apple silicon and Intel Macs.</p></details>
         <details><summary>Does MixBar install an audio driver?</summary><p>No. MixBar uses Apple’s built-in Core Audio process-tap technology. It does not install a virtual audio device, kernel extension, or system-wide driver.</p></details>
         <details><summary>What happens if an app cannot be processed?</summary><p>MixBar is designed to leave the app’s normal audio path available if a tap cannot start or stops working, instead of leaving its sound muted.</p></details>
