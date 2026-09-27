@@ -14,8 +14,8 @@
     <a class="brand" href="index.html"><img src="assets/mixbar-mark.svg" alt=""><span>MixBar</span></a>
     <p class="eyebrow">Purchase complete</p>
     <h1>Your Mac is about to sound better.</h1>
-    <p id="download-status">Verifying your Stripe payment…</p>
-    <p><a id="secure-download" class="button button-primary" hidden>Download MixBar</a></p>
+    <p id="download-status" aria-live="polite">Preparing your secure download…</p>
+    <p><a id="secure-download" class="button button-primary" hidden>Download MixBar again</a></p>
     <div id="download-help" hidden>
       <h2>Install in four small steps</h2>
       <ol>
@@ -44,7 +44,10 @@
       button.href = endpoint.toString();
       button.hidden = false;
       help.hidden = false;
-      status.textContent = "Your checkout link is ready. Choose Download MixBar to verify payment with Stripe and start the private download.";
+      status.textContent = "Verifying the Stripe payment and starting your MixBar download automatically…";
+      window.setTimeout(() => {
+        window.location.assign(endpoint.toString());
+      }, 650);
     }
     for (const link of document.querySelectorAll(".support-link")) {
       link.href = `mailto:${config.supportEmail || "czembri@gmail.com"}`;
