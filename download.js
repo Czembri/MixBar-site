@@ -3,15 +3,18 @@
   const status = document.querySelector("#download-status");
   const button = document.querySelector("#secure-download");
   const help = document.querySelector("#download-help");
-  const sessionID = new URLSearchParams(location.search).get("session_id");
+  const search = new URLSearchParams(location.search);
+  const sessionID = search.get("session_id");
+  const sandboxMode = search.get("sandbox") === "1";
+  const fulfillmentURL = sandboxMode ? config.sandboxFulfillmentURL : config.fulfillmentURL;
 
   if (!sessionID) {
     status.textContent = "This download link is missing its Stripe Checkout Session. Use the link from your payment confirmation or contact support.";
-  } else if (!config.fulfillmentURL) {
+  } else if (!fulfillmentURL) {
     status.textContent = "The secure download service is not live yet. Your payment is safe—contact support and include your Stripe receipt email.";
   } else {
     try {
-      const endpoint = new URL(config.fulfillmentURL);
+      const endpoint = new URL(fulfillmentURL);
       if (endpoint.protocol !== "https:" && endpoint.hostname !== "localhost") {
         throw new Error("The fulfillment endpoint must use HTTPS.");
       }

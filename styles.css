@@ -36,6 +36,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .skip-link { position: fixed; top: -80px; left: 16px; padding: 10px 16px; background: white; color: black; z-index: 100; }
 .skip-link:focus { top: 16px; }
 
+.sandbox-banner {
+  position: relative;
+  z-index: 60;
+  padding: 9px 20px;
+  color: #07120d;
+  background: var(--green);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .site-header {
   position: sticky;
   top: 0;

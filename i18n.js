@@ -57,11 +57,13 @@
   }
 
   function preserveLanguageInLinks(language) {
+    const sandboxMode = new URLSearchParams(location.search).get("sandbox") === "1";
     for (const link of document.querySelectorAll('a[href$=".html"], a[href*=".html?"]')) {
       const original = link.getAttribute("href");
       const url = new URL(original, location.href);
       if (url.origin !== location.origin) continue;
       url.searchParams.set("lang", language);
+      if (sandboxMode) url.searchParams.set("sandbox", "1");
       link.setAttribute("href", `${url.pathname.split("/").pop()}${url.search}${url.hash}`);
     }
   }

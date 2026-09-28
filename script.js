@@ -1,11 +1,21 @@
 const config = window.MIXBAR_SITE || {};
 const supportEmail = config.supportEmail || "czembri@gmail.com";
 const price = config.price || "59.99 PLN";
+const sandboxMode = new URLSearchParams(location.search).get("sandbox") === "1";
+const checkoutURL = sandboxMode ? config.sandboxCheckoutURL : config.checkoutURL;
 const checkoutLinks = document.querySelectorAll(".checkout-link");
 
+if (sandboxMode) {
+  const banner = document.createElement("aside");
+  banner.className = "sandbox-banner";
+  banner.setAttribute("role", "status");
+  banner.textContent = "Stripe test mode — use a Stripe test card. No real payment will be collected.";
+  document.body.prepend(banner);
+}
+
 for (const link of checkoutLinks) {
-  if (config.checkoutURL) {
-    link.href = config.checkoutURL;
+  if (checkoutURL) {
+    link.href = checkoutURL;
     link.rel = "noopener";
     link.target = "_blank";
   } else {
@@ -15,13 +25,13 @@ for (const link of checkoutLinks) {
   }
 }
 
-if (config.checkoutURL && config.paymentProvider === "stripe") {
+if (checkoutURL && config.paymentProvider === "stripe") {
   for (const link of checkoutLinks) {
     link.setAttribute("aria-label", `Buy MixBar securely with Stripe for ${price}`);
   }
 }
 
-if (!config.checkoutURL) {
+if (!checkoutURL) {
   const note = document.querySelector(".price-note");
   if (note) note.textContent = `Checkout is opening soon. Reserve the ${price} launch price by email.`;
 }
