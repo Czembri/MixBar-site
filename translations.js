@@ -16,7 +16,7 @@ window.MIXBAR_TRANSLATIONS = {
   "Privacy": { pl: "Prywatność", de: "Datenschutz", es: "Privacidad", fr: "Confidentialité" },
   "Pricing": { pl: "Cena", de: "Preis", es: "Precio", fr: "Tarif" },
   "Get MixBar": { pl: "Pobierz MixBar", de: "MixBar kaufen", es: "Obtener MixBar", fr: "Obtenir MixBar" },
-  "Get MixBar — $19": { pl: "Kup MixBar — 19 USD", de: "MixBar kaufen — 19 $", es: "Comprar MixBar — 19 $", fr: "Acheter MixBar — 19 $" },
+  "Get MixBar — 59.99 PLN": { pl: "Kup MixBar — 59,99 PLN", de: "MixBar kaufen — 59,99 PLN", es: "Comprar MixBar — 59,99 PLN", fr: "Acheter MixBar — 59,99 PLN" },
   "Native for macOS 14.2+": { pl: "Natywna aplikacja dla macOS 14.2+", de: "Nativ für macOS 14.2+", es: "Nativa para macOS 14.2+", fr: "Native pour macOS 14.2+" },
   "Every app.": { pl: "Każda aplikacja.", de: "Jede App.", es: "Cada app.", fr: "Chaque app." },
   "Every tab.": { pl: "Każda karta.", de: "Jeder Tab.", es: "Cada pestaña.", fr: "Chaque onglet." },
@@ -253,10 +253,10 @@ Object.assign(window.MIXBAR_TRANSLATIONS, {
   "Terms": { pl: "Warunki", de: "Bedingungen", es: "Condiciones", fr: "Conditions" },
   "Refunds": { pl: "Zwroty", de: "Rückerstattungen", es: "Reembolsos", fr: "Remboursements" },
   "Support": { pl: "Pomoc", de: "Support", es: "Soporte", fr: "Assistance" },
-  "Reserve MixBar — $19": { pl: "Zarezerwuj MixBar — 19 USD", de: "MixBar reservieren — 19 $", es: "Reservar MixBar — 19 $", fr: "Réserver MixBar — 19 $" },
+  "Reserve MixBar — 59.99 PLN": { pl: "Zarezerwuj MixBar — 59,99 PLN", de: "MixBar reservieren — 59,99 PLN", es: "Reservar MixBar — 59,99 PLN", fr: "Réserver MixBar — 59,99 PLN" },
   "Checkout is opening soon. Reserve the launch price by email.": { pl: "Płatności ruszą wkrótce. Zarezerwuj cenę premierową e-mailem.", de: "Der Checkout startet bald. Reserviere den Einführungspreis per E-Mail.", es: "El pago estará disponible pronto. Reserva el precio de lanzamiento por correo.", fr: "Le paiement ouvrira bientôt. Réservez le prix de lancement par e-mail." },
-  "Checkout is opening soon. Reserve the $19 launch price by email.": { pl: "Płatności ruszą wkrótce. Zarezerwuj cenę premierową 19 USD e-mailem.", de: "Der Checkout startet bald. Reserviere den Einführungspreis von 19 $ per E-Mail.", es: "El pago estará disponible pronto. Reserva por correo el precio de lanzamiento de 19 $.", fr: "Le paiement ouvrira bientôt. Réservez par e-mail le prix de lancement de 19 $." },
-  "Buy MixBar securely with Stripe for $19": { pl: "Kup MixBar bezpiecznie przez Stripe za 19 USD", de: "MixBar sicher über Stripe für 19 $ kaufen", es: "Comprar MixBar de forma segura con Stripe por 19 $", fr: "Acheter MixBar en toute sécurité avec Stripe pour 19 $" }
+  "Checkout is opening soon. Reserve the 59.99 PLN launch price by email.": { pl: "Płatności ruszą wkrótce. Zarezerwuj cenę premierową 59,99 PLN e-mailem.", de: "Der Checkout startet bald. Reserviere den Einführungspreis von 59,99 PLN per E-Mail.", es: "El pago estará disponible pronto. Reserva por correo el precio de lanzamiento de 59,99 PLN.", fr: "Le paiement ouvrira bientôt. Réservez par e-mail le prix de lancement de 59,99 PLN." },
+  "Buy MixBar securely with Stripe for 59.99 PLN": { pl: "Kup MixBar bezpiecznie przez Stripe za 59,99 PLN", de: "MixBar sicher über Stripe für 59,99 PLN kaufen", es: "Comprar MixBar de forma segura con Stripe por 59,99 PLN", fr: "Acheter MixBar en toute sécurité avec Stripe pour 59,99 PLN" }
 });
 
 Object.assign(window.MIXBAR_TRANSLATIONS, {
@@ -299,8 +299,8 @@ Object.assign(window.MIXBAR_TRANSLATIONS, {
   "Keep it.": { pl: "Zachowaj na zawsze.", de: "Dauerhaft behalten.", es: "Consérvalo.", fr: "Gardez-le." },
   "A focused Mac utility should not become another monthly bill. Your license includes every MixBar 1.x update.": { pl: "Praktyczne narzędzie dla Maca nie powinno być kolejnym miesięcznym rachunkiem. Licencja obejmuje wszystkie aktualizacje MixBar 1.x.", de: "Ein fokussiertes Mac-Tool sollte keine weitere Monatsrechnung sein. Deine Lizenz enthält alle MixBar-1.x-Updates.", es: "Una utilidad para Mac no debería convertirse en otra factura mensual. Tu licencia incluye todas las actualizaciones de MixBar 1.x.", fr: "Un utilitaire Mac ciblé ne devrait pas devenir une facture mensuelle de plus. Votre licence inclut toutes les mises à jour MixBar 1.x." },
   "Launch price": { pl: "Cena premierowa", de: "Einführungspreis", es: "Precio de lanzamiento", fr: "Prix de lancement" },
-  "USD · one time": { pl: "USD · jednorazowo", de: "USD · einmalig", es: "USD · pago único", fr: "USD · paiement unique" },
-  "Regular price $24 after launch": { pl: "Cena regularna po premierze: 24 USD", de: "Regulärer Preis nach der Einführung: 24 $", es: "Precio habitual tras el lanzamiento: 24 $", fr: "Prix normal après lancement : 24 $" },
+  "PLN · one time": { pl: "PLN · jednorazowo", de: "PLN · einmalig", es: "PLN · pago único", fr: "PLN · paiement unique" },
+  "One-time purchase. No subscription.": { pl: "Zakup jednorazowy. Bez subskrypcji.", de: "Einmalkauf. Kein Abo.", es: "Compra única. Sin suscripción.", fr: "Achat unique. Sans abonnement." },
   "Per-app volume and mute": { pl: "Głośność i wyciszenie każdej aplikacji", de: "Lautstärke und Stummschaltung pro App", es: "Volumen y silencio por app", fr: "Volume et sourdine par app" },
   "Per-app, subprocess, and Chromium-tab EQ": { pl: "Korektor aplikacji, podprocesów i kart Chromium", de: "EQ pro App, Unterprozess und Chromium-Tab", es: "EQ por app, subproceso y pestaña Chromium", fr: "Égaliseur par app, sous-processus et onglet Chromium" },
   "Safari, Chrome, and Opera tab controls": { pl: "Sterowanie kartami Safari, Chrome i Opery", de: "Steuerung für Safari-, Chrome- und Opera-Tabs", es: "Control de pestañas de Safari, Chrome y Opera", fr: "Contrôle des onglets Safari, Chrome et Opera" },

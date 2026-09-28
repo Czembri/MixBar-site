@@ -1,6 +1,6 @@
 const config = window.MIXBAR_SITE || {};
 const supportEmail = config.supportEmail || "czembri@gmail.com";
-const price = config.price || "$19";
+const price = config.price || "59.99 PLN";
 const checkoutLinks = document.querySelectorAll(".checkout-link");
 
 for (const link of checkoutLinks) {

@@ -5,5 +5,5 @@ window.MIXBAR_SITE = {
   checkoutURL: "",
   fulfillmentURL: "",
   supportEmail: "czembri@gmail.com",
-  price: "$19"
+  price: "59.99 PLN"
 };
