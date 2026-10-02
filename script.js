@@ -1,9 +1,11 @@
 const config = window.MIXBAR_SITE || {};
-const supportEmail = config.supportEmail || "czembri@gmail.com";
-const price = config.price || "59.99 PLN";
+const price = config.price || "$5/month";
 const sandboxMode = new URLSearchParams(location.search).get("sandbox") === "1";
-const checkoutURL = sandboxMode ? config.sandboxCheckoutURL : config.checkoutURL;
 const checkoutLinks = document.querySelectorAll(".checkout-link");
+const productionCheckoutFallback = "https://buy.stripe.com/bJe00i8YCbx764BfhV1gs00";
+const checkoutURL = sandboxMode
+  ? config.sandboxCheckoutURL
+  : (config.checkoutURL || productionCheckoutFallback);
 
 if (sandboxMode) {
   const banner = document.createElement("aside");
@@ -19,25 +21,22 @@ for (const link of checkoutLinks) {
     link.rel = "noopener";
     link.target = "_blank";
   } else {
-    link.href = `mailto:${supportEmail}?subject=${encodeURIComponent("Reserve the MixBar launch price")}`;
-    link.textContent = `Reserve MixBar — ${price}`;
-    link.title = "Checkout is opening soon. Reserve the launch price by email.";
+    link.href = "#pricing";
+    link.removeAttribute("target");
+    link.setAttribute("aria-disabled", "true");
+    link.title = "Checkout is temporarily unavailable.";
   }
 }
 
 if (checkoutURL && config.paymentProvider === "stripe") {
   for (const link of checkoutLinks) {
-    link.setAttribute("aria-label", `Buy MixBar securely with Stripe for ${price}`);
+    link.setAttribute("aria-label", `Subscribe to MixBar securely with Stripe for ${price}`);
   }
 }
 
 if (!checkoutURL) {
   const note = document.querySelector(".price-note");
-  if (note) note.textContent = `Checkout is opening soon. Reserve the ${price} launch price by email.`;
-}
-
-for (const link of document.querySelectorAll(".support-link")) {
-  link.href = `mailto:${supportEmail}`;
+  if (note) note.textContent = "Checkout is temporarily unavailable. Please try again shortly.";
 }
 
 document.querySelector("#year").textContent = new Date().getFullYear();

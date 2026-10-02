@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c1016">
+  <link rel="canonical" href="https://getmixbar.com/install.html">
   <title>Install and set up MixBar</title>
   <link rel="icon" href="assets/mixbar-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -31,11 +32,11 @@
       <li>If access was denied earlier, open <strong>System Settings → Privacy &amp; Security → System Audio Recording</strong>, enable MixBar, and relaunch it.</li>
     </ol>
 
-    <h2>3. Choose speakers or AirPlay</h2>
+    <h2>3. Choose your audio output</h2>
     <ol>
-      <li>Leave Output on <strong>System Default</strong>, or choose a connected device.</li>
-      <li>For AirPlay, first connect the speaker in <strong>System Settings → Sound → Output</strong>.</li>
-      <li>Return to MixBar and choose the speaker under the <strong>AirPlay</strong> section. MixBar enables wireless drift compensation automatically.</li>
+      <li>Open <strong>Output</strong> and choose any available built-in, wired, Bluetooth, or AirPlay device.</li>
+      <li>MixBar switches the macOS output directly and changes its icon to match the active route.</li>
+      <li>If a newly connected device is missing, choose <strong>Refresh Audio Devices</strong>. Wireless drift compensation is enabled automatically.</li>
     </ol>
 
     <h2>4. Optional browser tab controls</h2>
@@ -44,13 +45,8 @@
     <h2>5. Everyday use</h2>
     <p>MixBar lives in the menu bar. Open it to adjust app and tab volume, mute, EQ, output, and AirPlay. Enable <strong>Start MixBar at login</strong> in Settings if you want it ready after every restart.</p>
 
-    <p class="legal-contact">Still stuck? <a class="support-link" href="mailto:czembri@gmail.com">Email support</a>.</p>
+    <p class="legal-contact">Still stuck? <a href="contact.html">Open the contact form</a>.</p>
   </main>
-  <script src="site-config.js"></script>
-  <script>
-    const email = (window.MIXBAR_SITE || {}).supportEmail || "czembri@gmail.com";
-    for (const link of document.querySelectorAll(".support-link")) link.href = `mailto:${email}`;
-  </script>
   <script src="translations.js"></script>
   <script src="i18n.js"></script>
 </body>

@@ -28,8 +28,4 @@
       status.textContent = "The secure download service is temporarily unavailable. Contact support and include your Stripe receipt email.";
     }
   }
-
-  for (const link of document.querySelectorAll(".support-link")) {
-    link.href = `mailto:${config.supportEmail || "czembri@gmail.com"}`;
-  }
 })();
