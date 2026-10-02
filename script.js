@@ -1,8 +1,8 @@
 const config = window.MIXBAR_SITE || {};
-const price = config.price || "$5/month";
+const price = config.price || "$21 once";
 const sandboxMode = new URLSearchParams(location.search).get("sandbox") === "1";
 const checkoutLinks = document.querySelectorAll(".checkout-link");
-const productionCheckoutFallback = "https://buy.stripe.com/bJe00i8YCbx764BfhV1gs00";
+const productionCheckoutFallback = "https://buy.stripe.com/14A4gydeS30BgJf1r51gs01";
 const checkoutURL = sandboxMode
   ? config.sandboxCheckoutURL
   : (config.checkoutURL || productionCheckoutFallback);
@@ -30,7 +30,7 @@ for (const link of checkoutLinks) {
 
 if (checkoutURL && config.paymentProvider === "stripe") {
   for (const link of checkoutLinks) {
-    link.setAttribute("aria-label", `Subscribe to MixBar securely with Stripe for ${price}`);
+    link.setAttribute("aria-label", `Buy MixBar securely with Stripe for ${price}`);
   }
 }
 
