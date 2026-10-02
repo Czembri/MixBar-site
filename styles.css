@@ -61,6 +61,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .nav-links { margin-left: auto; display: flex; align-items: center; gap: 30px; }
 .nav-links a { color: #b8c1ca; font-size: 14px; font-weight: 600; }
 .nav-links a:hover { color: white; }
+.nav-contact {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+.nav-contact:hover { color: white; }
 
 .button {
   display: inline-flex;
@@ -387,7 +394,7 @@ footer { padding-block: 35px; border-top: 1px solid var(--line); color: var(--di
 
 @media (max-width: 940px) {
   .nav-links { display: none; }
-  .nav .button { margin-left: auto; }
+  .nav-contact { margin-left: auto; }
   .hero { grid-template-columns: 1fr; gap: 75px; padding-top: 75px; }
   .hero-copy { text-align: center; }
   .hero .eyebrow, .hero-actions, .trust-list { justify-content: center; }
@@ -410,6 +417,7 @@ footer { padding-block: 35px; border-top: 1px solid var(--line); color: var(--di
   .shell { width: min(calc(100% - 28px), 1160px); }
   .nav { height: 64px; gap: 12px; }
   .nav .brand { flex-shrink: 0; }
+  .nav-contact { font-size: 12px; }
   .nav .button { min-height: 36px; padding-inline: 14px; font-size: 12px; }
   .hero { min-height: auto; padding-block: 60px 80px; }
   h1 { font-size: clamp(42px, 12vw, 54px); }

@@ -266,6 +266,7 @@ Object.assign(window.MIXBAR_TRANSLATIONS, {
   "Install guide": { pl: "Instrukcja instalacji", de: "Installationsanleitung", es: "Guía de instalación", fr: "Guide d’installation" },
   "Terms": { pl: "Warunki", de: "Bedingungen", es: "Condiciones", fr: "Conditions" },
   "Refunds": { pl: "Zwroty", de: "Rückerstattungen", es: "Reembolsos", fr: "Remboursements" },
+  "Contact": { pl: "Kontakt", de: "Kontakt", es: "Contacto", fr: "Contact" },
   "Support": { pl: "Pomoc", de: "Support", es: "Soporte", fr: "Assistance" }
 });
 
