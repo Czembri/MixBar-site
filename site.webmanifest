@@ -1,0 +1,17 @@
+{
+  "name": "MixBar",
+  "short_name": "MixBar",
+  "description": "Independent volume control for Mac apps and supported browser tabs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c1016",
+  "theme_color": "#0c1016",
+  "icons": [
+    {
+      "src": "/assets/mixbar-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
