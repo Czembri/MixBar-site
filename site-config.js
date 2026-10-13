@@ -6,6 +6,8 @@ window.MIXBAR_SITE = {
   fulfillmentURL: "https://download.getmixbar.com/download",
   sandboxCheckoutURL: "https://buy.stripe.com/test_5kQ5kC6Rv8RQ8Ys4O20Ba00",
   sandboxFulfillmentURL: "https://mixbar-download-dev.mixbar-stripe-fulfillment.workers.dev/download",
+  restoreEndpoint: "https://download.getmixbar.com/restore/request",
+  sandboxRestoreEndpoint: "https://mixbar-download-dev.mixbar-stripe-fulfillment.workers.dev/restore/request",
   developmentHosts: ["dev.getmixbar.com", "mixbar-site-dev.pages.dev"],
   contactEndpoint: "https://download.getmixbar.com/contact",
   turnstileSiteKey: "0x4AAAAAAFL_vimfbkQ9a7vN",

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1016">
+  <meta name="description" content="Restore a MixBar download you already purchased.">
+  <link rel="canonical" href="https://getmixbar.com/restore.html">
+  <title>Restore purchase — MixBar</title>
+  <link rel="icon" href="assets/mixbar-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <a class="skip-link" href="#restore-form">Skip to the restore form</a>
+  <header class="site-header">
+    <nav class="shell nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html"><img src="assets/mixbar-mark.svg" width="38" height="38" alt=""><span>MixBar</span></a>
+      <div class="nav-links"><a href="index.html">Back to MixBar</a></div>
+    </nav>
+  </header>
+
+  <main class="contact-page">
+    <section class="shell contact-layout">
+      <div class="contact-intro">
+        <div class="eyebrow">Existing customers</div>
+        <h1>Download MixBar again.</h1>
+        <p>Enter the email address used at Stripe Checkout. If it has an active MixBar 1.x purchase, we will send a secure download link.</p>
+        <ul class="contact-promises">
+          <li>No second payment for the MixBar 1.x version you own.</li>
+          <li>The email link expires after 15 minutes and works once.</li>
+          <li>We never reveal whether an address is in our customer records.</li>
+        </ul>
+      </div>
+
+      <div class="contact-card">
+        <form id="restore-form" novalidate>
+          <div class="form-field">
+            <label for="restore-email">Checkout email address</label>
+            <input id="restore-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required>
+            <p class="field-hint">Use the exact address shown on your Stripe receipt.</p>
+          </div>
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="restore-company">Company website</label>
+            <input id="restore-company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <input id="restore-started-at" name="startedAt" type="hidden">
+
+          <div id="restore-turnstile" class="turnstile-slot" aria-label="Anti-spam verification"></div>
+          <p class="privacy-note">Protected by Cloudflare Turnstile. Your address is used only to verify your purchase and send this download link.</p>
+          <button class="button button-primary contact-submit" type="submit" disabled>Send secure download link</button>
+          <p id="restore-status" class="contact-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <a class="brand" href="index.html"><img src="assets/mixbar-mark.svg" width="30" height="30" alt=""><span>MixBar</span></a>
+      <p>Independent volume control for Mac.</p>
+      <div><a href="install.html">Install guide</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a><a href="contact.html">Contact</a></div>
+      <small>© 2026 Czembri</small>
+    </div>
+  </footer>
+
+  <script src="site-config.js?v=20261013-2"></script>
+  <script src="translations.js?v=20261013-1"></script>
+  <script src="i18n.js"></script>
+  <script src="restore.js"></script>
+</body>
+</html>
