@@ -1,6 +1,6 @@
 {
-  "version": "1.9",
-  "build": 10,
+  "version": "1.9.1",
+  "build": 11,
   "downloadURL": "https://getmixbar.com/restore.html",
-  "notes": "Adds the full 7-day trial and purchase activation inside MixBar."
+  "notes": "Removes the local trial and activation gate. Paid customers receive the complete unrestricted MixBar 1.x app."
 }
