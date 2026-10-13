@@ -9,3 +9,6 @@
 
 /update.json
   Cache-Control: no-cache, no-store, must-revalidate
+
+/site-config.js
+  Cache-Control: no-cache, no-store, must-revalidate
