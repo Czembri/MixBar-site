@@ -1,6 +1,6 @@
 {
-  "version": "1.8",
-  "build": 9,
+  "version": "1.9",
+  "build": 10,
   "downloadURL": "https://getmixbar.com/restore.html",
-  "notes": "The latest stable MixBar release."
+  "notes": "Adds the full 7-day trial and purchase activation inside MixBar."
 }
