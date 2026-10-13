@@ -5,7 +5,8 @@
   const help = document.querySelector("#download-help");
   const search = new URLSearchParams(location.search);
   const sessionID = search.get("session_id");
-  const sandboxMode = search.get("sandbox") === "1";
+  const developmentHosts = Array.isArray(config.developmentHosts) ? config.developmentHosts : [];
+  const sandboxMode = search.get("sandbox") === "1" || developmentHosts.includes(location.hostname);
   const fulfillmentURL = sandboxMode ? config.sandboxFulfillmentURL : config.fulfillmentURL;
 
   if (!sessionID) {

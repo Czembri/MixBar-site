@@ -5,7 +5,8 @@ window.MIXBAR_SITE = {
   checkoutURL: "https://buy.stripe.com/14A4gydeS30BgJf1r51gs01",
   fulfillmentURL: "https://download.getmixbar.com/download",
   sandboxCheckoutURL: "https://buy.stripe.com/test_5kQ5kC6Rv8RQ8Ys4O20Ba00",
-  sandboxFulfillmentURL: "https://mixbar-download.mixbar-stripe-fulfillment.workers.dev/download",
+  sandboxFulfillmentURL: "https://mixbar-download-dev.mixbar-stripe-fulfillment.workers.dev/download",
+  developmentHosts: ["dev.getmixbar.com", "mixbar-site-dev.pages.dev"],
   contactEndpoint: "https://download.getmixbar.com/contact",
   turnstileSiteKey: "0x4AAAAAAFL_vimfbkQ9a7vN",
   price: "$21 once"

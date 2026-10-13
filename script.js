@@ -1,6 +1,8 @@
 const config = window.MIXBAR_SITE || {};
 const price = config.price || "$21 once";
-const sandboxMode = new URLSearchParams(location.search).get("sandbox") === "1";
+const developmentHosts = Array.isArray(config.developmentHosts) ? config.developmentHosts : [];
+const sandboxMode = new URLSearchParams(location.search).get("sandbox") === "1"
+  || developmentHosts.includes(location.hostname);
 const checkoutLinks = document.querySelectorAll(".checkout-link");
 const productionCheckoutFallback = "https://buy.stripe.com/14A4gydeS30BgJf1r51gs01";
 const checkoutURL = sandboxMode
