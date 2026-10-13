@@ -4,10 +4,12 @@ const developmentHosts = Array.isArray(config.developmentHosts) ? config.develop
 const sandboxMode = new URLSearchParams(location.search).get("sandbox") === "1"
   || developmentHosts.includes(location.hostname);
 const checkoutLinks = document.querySelectorAll(".checkout-link");
+const trialLinks = document.querySelectorAll(".trial-link");
 const productionCheckoutFallback = "https://buy.stripe.com/14A4gydeS30BgJf1r51gs01";
 const checkoutURL = sandboxMode
   ? config.sandboxCheckoutURL
   : (config.checkoutURL || productionCheckoutFallback);
+const trialURL = sandboxMode ? config.sandboxTrialURL : config.trialURL;
 
 if (sandboxMode) {
   const banner = document.createElement("aside");
@@ -27,6 +29,16 @@ for (const link of checkoutLinks) {
     link.removeAttribute("target");
     link.setAttribute("aria-disabled", "true");
     link.title = "Checkout is temporarily unavailable.";
+  }
+}
+
+for (const link of trialLinks) {
+  if (trialURL && /^https:\/\//.test(trialURL)) {
+    link.href = trialURL;
+  } else {
+    link.href = "#pricing";
+    link.setAttribute("aria-disabled", "true");
+    link.title = "The free trial is temporarily unavailable.";
   }
 }
 
