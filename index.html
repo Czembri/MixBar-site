@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c1016">
-  <meta name="description" content="MixBar gives every Mac app—and supported browser tab—its own volume control from the menu bar.">
+  <meta name="description" content="A native Mac volume mixer with per-app volume, mute, EQ, automation, and supported browser-tab control. No subscription or permanent audio driver.">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="MixBar — Every app. Every tab. Your volume.">
-  <meta property="og:description" content="Independent volume control for Mac apps and browser tabs. Native, private, and always one click away.">
+  <meta property="og:title" content="MixBar — Mac volume mixer for apps and browser tabs">
+  <meta property="og:description" content="Per-app volume, mute, EQ, automation, and supported browser-tab control from the macOS menu bar.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://getmixbar.com/">
   <meta property="og:site_name" content="MixBar">
@@ -16,14 +16,14 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="MixBar — every app, every tab, your volume">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MixBar — Every app. Every tab. Your volume.">
-  <meta name="twitter:description" content="Independent volume control and EQ for Mac apps and supported browser tabs.">
+  <meta name="twitter:title" content="MixBar — Mac volume mixer for apps and browser tabs">
+  <meta name="twitter:description" content="Per-app volume, mute, EQ, automation, and supported browser-tab control from the macOS menu bar.">
   <meta name="twitter:image" content="https://getmixbar.com/assets/mixbar-social-card.png">
   <link rel="canonical" href="https://getmixbar.com/">
   <link rel="manifest" href="site.webmanifest">
-  <title>MixBar — App and tab volume control for Mac</title>
+  <title>Mac Volume Mixer — Per-App &amp; Tab Volume Control | MixBar</title>
   <link rel="icon" href="assets/mixbar-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261013-1">
+  <link rel="stylesheet" href="styles.css?v=20261015-1">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -34,7 +34,15 @@
       "description": "Independent volume control and EQ for Mac apps and supported browser tabs.",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "macOS 14.2 or later",
-      "softwareVersion": "1.9.1",
+      "softwareVersion": "1.9.2",
+      "softwareRequirements": "macOS 14.2 or later",
+      "featureList": [
+        "Per-app volume and mute",
+        "Three-band EQ for apps and supported browser tabs",
+        "Supported Safari, Chrome, and Opera tab volume",
+        "Audio Autopilot scenes and triggers",
+        "AirPlay and Bluetooth output switching"
+      ],
       "offers": {
         "@type": "Offer",
         "price": "21.00",
@@ -406,6 +414,25 @@
       </div>
     </section>
 
+    <section class="section shell learn-section" aria-labelledby="learn-title">
+      <div class="section-heading reveal">
+        <div class="eyebrow">Mac audio guides</div>
+        <h2 id="learn-title">Solve the sound problem first.</h2>
+        <p class="section-intro">Practical explanations for controlling app and browser audio on macOS—plus the limits worth knowing before installing anything.</p>
+      </div>
+      <div class="learn-grid">
+        <a class="learn-card reveal" href="guides/mac-volume-mixer.html">
+          <span>Guide</span><h3>Mac volume mixers explained</h3><p>What macOS includes, what it leaves out, and what to check before choosing an audio utility.</p>
+        </a>
+        <a class="learn-card reveal" href="guides/control-volume-per-app-mac.html">
+          <span>How to</span><h3>Control volume per app on Mac</h3><p>Balance calls, music, games, and notifications independently in a few clear steps.</p>
+        </a>
+        <a class="learn-card reveal" href="guides/control-chrome-tab-volume-mac.html">
+          <span>Browser audio</span><h3>Control individual Chrome tab volume</h3><p>Choose a playing tab, change its level, and keep the browser master intact.</p>
+        </a>
+      </div>
+    </section>
+
     <section class="closing-cta">
       <div class="shell reveal">
         <img src="assets/mixbar-mark.svg" width="72" height="72" alt="">
@@ -420,7 +447,7 @@
     <div class="shell footer-grid">
       <a class="brand" href="#top"><img src="assets/mixbar-mark.svg" width="30" height="30" alt=""><span>MixBar</span></a>
       <p>Independent volume control for Mac.</p>
-      <div><a href="install.html">Install guide</a><a href="restore.html">Restore purchase</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a><a href="contact.html">Contact</a></div>
+      <div><a href="guides/mac-volume-mixer.html">Mac audio guides</a><a href="install.html">Install guide</a><a href="restore.html">Restore purchase</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a><a href="contact.html">Contact</a></div>
       <small>© <span id="year"></span> Nostar Sp. z o.o.</small>
     </div>
   </footer>

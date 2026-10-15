@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0c1016">
+  <meta name="description" content="Control the volume of individual Chrome tabs on Mac while keeping a separate Chrome master volume. Learn how MixBar Tab Control works and what it accesses.">
+  <meta name="robots" content="index,follow"><meta property="og:title" content="Control individual Chrome tab volume on Mac — MixBar"><meta property="og:description" content="Choose a playing Chrome tab, give it a separate volume and EQ, and keep a browser-level master."><meta property="og:type" content="article"><meta property="og:url" content="https://getmixbar.com/guides/control-chrome-tab-volume-mac.html"><meta property="og:image" content="https://getmixbar.com/assets/mixbar-social-card.png"><meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://getmixbar.com/guides/control-chrome-tab-volume-mac.html"><title>Control Individual Chrome Tab Volume on Mac | MixBar</title><link rel="icon" href="../assets/mixbar-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="../styles.css?v=20261015-1"><link rel="stylesheet" href="../guides.css?v=20261015-1">
+</head>
+<body>
+  <header class="site-header"><nav class="nav shell" aria-label="Main navigation"><a class="brand" href="../index.html"><img src="../assets/mixbar-mark.svg" width="36" height="36" alt=""><span>MixBar</span></a><div class="nav-links"><a href="../index.html#features">Features</a><a href="../index.html#browsers">Browsers</a><a href="../index.html#pricing">Pricing</a></div><a class="button button-small" href="../index.html#pricing">Get MixBar</a></nav></header>
+  <main class="guide-page shell">
+    <div class="guide-breadcrumbs"><a href="../index.html">MixBar</a> / Guides / Chrome tab volume</div>
+    <header class="guide-hero"><div class="eyebrow">Browser audio guide</div><h1>Control individual Chrome tab volume on Mac</h1><p class="lede">Chrome normally reaches macOS as one application. MixBar Tab Control lets you opt specific playing tabs into separate volume, mute, and three-band EQ controls beneath a Chrome master.</p><div class="guide-meta"><span>Updated October 15, 2026</span><span>4 minute read</span><span>Chrome on macOS</span></div></header>
+    <div class="guide-layout">
+      <article class="guide-content">
+        <h2 id="problem">Why macOS sees the whole browser</h2><p>Multiple Chrome tabs share browser processes, so a normal per-app mixer can lower Chrome but cannot reliably know which page should change. Individual-tab control requires an explicit browser action that identifies and captures the tab you choose.</p>
+        <h2 id="install">Install the reviewed companion extension</h2><ol><li>Install <a href="https://chromewebstore.google.com/detail/mixbar-tab-control/bclggedekpiidepijhgopddppdmclndn" rel="noopener">MixBar Tab Control from the Chrome Web Store</a>.</li><li>Open MixBar on the Mac and complete its Browser Tabs setup.</li><li>Play audio in the Chrome tab you want to control.</li><li>Open the extension and choose <strong>Control this tab</strong>.</li><li>The tab appears underneath Chrome in MixBar with its own volume, mute, and EQ.</li></ol>
+        <div class="guide-callout"><strong>No developer mode</strong>The public extension is reviewed and installed from the Chrome Web Store. You do not need to load an unpacked extension or enable browser developer settings.</div>
+        <h2 id="master">Keep the Chrome master</h2><p>Controlled tabs appear as child sources under Chrome. The tab slider changes that page; the Chrome app slider remains a master for the browser. This makes it possible to keep a meeting tab clear, lower a playlist, and still mute all Chrome audio in one step.</p>
+        <h2 id="privacy">What the extension accesses</h2><p>The extension acts only after you choose a tab. It sends the captured tab’s audio to the local MixBar app through Chrome Native Messaging. It does not read page content, browsing history, bookmarks, passwords, form data, or microphone input. Audio processing happens locally in memory.</p>
+        <h2 id="limits">Pages that may behave differently</h2><p>Protected streams, unusual embedded players, or browser policies can restrict capture. Stop controlling a tab before moving it between profiles or when a protected player refuses playback. The Chrome application itself remains available as a fallback source.</p>
+        <h2 id="remember">Remember settings by page</h2><p>MixBar can restore a controlled tab’s saved volume, mute state, custom label, and EQ using its page URL. That is useful for recurring meeting pages, focus playlists, dashboards, and other sites you use repeatedly.</p>
+        <div class="guide-cta"><h2>Put every playing tab in the right place.</h2><p>The companion extension is free. Tab control is part of the MixBar Mac app.</p><a class="button button-primary" href="../index.html#pricing">See MixBar for Mac</a></div>
+      </article>
+      <aside class="guide-aside"><strong>In this guide</strong><a href="#problem">Why tabs need help</a><a href="#install">Install and connect</a><a href="#master">Chrome master</a><a href="#privacy">Privacy</a><a href="#limits">Compatibility limits</a><a href="#remember">Saved settings</a></aside>
+    </div>
+  </main>
+  <footer><div class="shell footer-grid"><a class="brand" href="../index.html"><img src="../assets/mixbar-mark.svg" width="30" height="30" alt=""><span>MixBar</span></a><p>Independent volume control for Mac.</p><div><a href="mac-volume-mixer.html">Mac volume mixer guide</a><a href="control-volume-per-app-mac.html">Per-app volume guide</a><a href="../privacy.html">Privacy</a><a href="../contact.html">Contact</a></div><small>© 2026 Nostar Sp. z o.o.</small></div></footer>
+</body>
+</html>

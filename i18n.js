@@ -64,7 +64,7 @@
       if (url.origin !== location.origin) continue;
       url.searchParams.set("lang", language);
       if (sandboxMode) url.searchParams.set("sandbox", "1");
-      link.setAttribute("href", `${url.pathname.split("/").pop()}${url.search}${url.hash}`);
+      link.setAttribute("href", `${url.pathname}${url.search}${url.hash}`);
     }
   }
 

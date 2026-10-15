@@ -297,6 +297,14 @@ h1 em { color: transparent; background: var(--accent); background-clip: text; fo
 .faq details[open] summary::after { content: "−"; }
 .faq details p { max-width: 760px; margin: -7px 0 25px; color: var(--muted); }
 
+.learn-section { padding-top: 35px; }
+.learn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.learn-card { min-height: 245px; padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.018)); transition: border-color .2s ease, transform .2s ease; }
+.learn-card:hover { border-color: rgba(105,238,156,.38); transform: translateY(-3px); }
+.learn-card > span { color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.learn-card h3 { margin: 45px 0 10px; font-size: 24px; letter-spacing: -.025em; }
+.learn-card p { margin: 0; color: var(--muted); font-size: 15px; }
+
 .closing-cta { padding-block: 125px; text-align: center; }
 .closing-cta img { margin-inline: auto; border-radius: 18px; }
 .closing-cta h2 { margin-top: 24px; }
@@ -417,6 +425,7 @@ footer { padding-block: 35px; border-top: 1px solid var(--line); color: var(--di
   .hero-lede { margin-inline: auto; }
   .menu-panel { transform: none; }
   .feature-grid { grid-template-columns: repeat(2,1fr); }
+  .learn-grid { grid-template-columns: 1fr; }
   .capability-grid { grid-template-columns: 1fr; }
   .browser-layout, .pricing-layout { grid-template-columns: 1fr; gap: 65px; }
   .browser-stack { max-width: 600px; width: 100%; margin-inline: auto; }
