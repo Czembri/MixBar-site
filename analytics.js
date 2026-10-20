@@ -12,6 +12,7 @@
   const sent = new Set();
   let googleLoaded = false;
   let metaLoaded = false;
+  let tiktokLoaded = false;
   let consent = readConsent();
 
   window.dataLayer = window.dataLayer || [];
@@ -79,7 +80,7 @@
   function removeTrackingCookies() {
     for (const cookie of document.cookie.split(";")) {
       const name = cookie.split("=", 1)[0].trim();
-      if (!/^_(?:ga|gcl|fbp|fbc)/.test(name)) continue;
+      if (!/^(?:_(?:ga|gcl|fbp|fbc|ttp|tt_enable_cookie)|ttcsid(?:_|$)|tt_pixel_session_index$|tt_sessionid$|tt_appinfo$)/i.test(name)) continue;
       document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax`;
       document.cookie = `${name}=; Max-Age=0; Path=/; Domain=.getmixbar.com; SameSite=Lax`;
     }
@@ -132,6 +133,48 @@
     }
   }
 
+  function loadTikTok() {
+    if (tiktokLoaded || !consent.marketing || !active || !config.tiktokPixelId) return;
+    tiktokLoaded = true;
+    const objectName = "ttq";
+    window.TiktokAnalyticsObject = objectName;
+    const ttq = window[objectName] = window[objectName] || [];
+    ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"];
+    ttq.setAndDefer = function (target, method) {
+      target[method] = function () { target.push([method].concat(Array.prototype.slice.call(arguments, 0))); };
+    };
+    for (const method of ttq.methods) ttq.setAndDefer(ttq, method);
+    ttq.instance = function (pixelId) {
+      const instance = ttq._i[pixelId] || [];
+      for (const method of ttq.methods) ttq.setAndDefer(instance, method);
+      return instance;
+    };
+    ttq.load = function (pixelId, options) {
+      const source = "https://analytics.tiktok.com/i18n/pixel/events.js";
+      ttq._i = ttq._i || {};
+      ttq._i[pixelId] = [];
+      ttq._i[pixelId]._u = source;
+      ttq._t = ttq._t || {};
+      ttq._t[pixelId] = +new Date();
+      ttq._o = ttq._o || {};
+      ttq._o[pixelId] = options || {};
+      loadScript(`${source}?sdkid=${encodeURIComponent(pixelId)}&lib=${objectName}`, "mixbar-tiktok-pixel");
+    };
+    ttq.enableCookie();
+    ttq.grantConsent();
+    ttq.load(config.tiktokPixelId);
+    ttq.page();
+    if (location.pathname === "/" || location.pathname.startsWith("/guides/")) {
+      ttq.track("ViewContent", {
+        content_type: "product",
+        content_ids: ["mixbar"],
+        description: document.title,
+        value: 21,
+        currency: "USD"
+      });
+    }
+  }
+
   function applyConsent() {
     window.gtag("consent", "update", {
       analytics_storage: consent.analytics ? "granted" : "denied",
@@ -144,12 +187,26 @@
       storageRemove(clientKey);
       removeTrackingCookies();
     }
-    if (!consent.marketing) removeTrackingCookies();
+    if (!consent.marketing) {
+      if (tiktokLoaded && window.ttq) {
+        window.ttq.revokeConsent();
+        window.ttq.disableCookie();
+      }
+      removeTrackingCookies();
+    }
     if (consent.analytics) {
       loadGoogle();
       track("page_view", { page_location: location.href, page_title: document.title });
     }
-    if (consent.marketing) loadMeta();
+    if (consent.marketing) {
+      loadMeta();
+      if (tiktokLoaded && window.ttq) {
+        window.ttq.enableCookie();
+        window.ttq.grantConsent();
+      } else {
+        loadTikTok();
+      }
+    }
     refreshCheckoutLinks();
   }
 
@@ -192,6 +249,15 @@
       link.href = decorateCheckoutURL(link.dataset.checkoutBase || link.href);
       track("checkout_started", { link_url: link.href, placement: link.dataset.analyticsLocation || "unknown" });
       if (consent.marketing && metaLoaded) window.fbq("track", "InitiateCheckout", { content_ids: ["mixbar"], content_type: "product" });
+      if (consent.marketing && tiktokLoaded) {
+        window.ttq.track("InitiateCheckout", {
+          content_type: "product",
+          content_ids: ["mixbar"],
+          description: "MixBar for macOS",
+          value: 21,
+          currency: "USD"
+        });
+      }
       return;
     }
     const href = link.href || "";
@@ -266,10 +332,10 @@
     openPreferences() { document.querySelector(".consent-settings")?.click(); },
     get consent() { return { ...consent }; }
   });
+  if (consent.decided) applyConsent();
   document.addEventListener("click", trackClick, true);
   document.addEventListener("DOMContentLoaded", () => {
     consentUI();
     refreshCheckoutLinks();
-    if (consent.decided) applyConsent();
   }, { once: true });
 })();

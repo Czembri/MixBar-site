@@ -31,7 +31,9 @@
       googleAdsConversionId: validIdentifier(candidate.googleAdsConversionId, /^AW-[0-9]+$/)
         ? candidate.googleAdsConversionId.trim() : "",
       metaPixelId: validIdentifier(candidate.metaPixelId, /^[0-9]{5,32}$/)
-        ? candidate.metaPixelId.trim() : ""
+        ? candidate.metaPixelId.trim() : "",
+      tiktokPixelId: validIdentifier(candidate.tiktokPixelId, /^[A-Z0-9]{10,32}$/i)
+        ? candidate.tiktokPixelId.trim().toUpperCase() : ""
     };
   }
 

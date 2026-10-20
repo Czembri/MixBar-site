@@ -7,5 +7,6 @@ window.MIXBAR_MARKETING_CONFIG = {
   gtmContainerId: "",
   ga4MeasurementId: "",
   googleAdsConversionId: "",
-  metaPixelId: ""
+  metaPixelId: "",
+  tiktokPixelId: ""
 };

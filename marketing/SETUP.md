@@ -37,6 +37,7 @@ export MIXBAR_GTM_CONTAINER_ID=GTM-XXXXXXX
 export MIXBAR_GA4_MEASUREMENT_ID=G-XXXXXXXXXX
 export MIXBAR_GOOGLE_ADS_CONVERSION_ID=AW-XXXXXXXXX
 export MIXBAR_META_PIXEL_ID=123456789012345
+export MIXBAR_TIKTOK_PIXEL_ID=DBBMQF3C77U4J2JQ6TM0
 Scripts/generate-marketing-config.sh /tmp/marketing-config.js
 ```
 
@@ -85,24 +86,32 @@ The webhook omits purchase measurement when consented attribution is absent. It 
 5. Reject Marketing and confirm no Meta script or request loads.
 6. Do not optimize for Meta Purchase yet. A server-side verified Meta purchase needs a separate Conversions API implementation, explicit marketing consent linkage, and browser/server event ID deduplication.
 
-## 7. Search Console
+## 7. TikTok Ads Manager
+
+1. Create a Web data source named **MixBar Website** and choose the browser-side TikTok Pixel setup.
+2. Copy the public Pixel ID into `MIXBAR_TIKTOK_PIXEL_ID` for production deployment.
+3. Keep automatic advanced matching and automatic event discovery disabled. The site explicitly sends only PageView, ViewContent, and InitiateCheckout after Marketing consent.
+4. In Events Manager Test Events, verify no TikTok request occurs before consent, then verify one PageView and one ViewContent after consent and one InitiateCheckout on a buy link.
+5. Do not optimize for TikTok Purchase yet. A verified Purchase event requires a reviewed Events API integration from the signed Stripe webhook with marketing-consent linkage and deduplication.
+
+## 8. Search Console
 
 1. Keep the verified Domain property for `getmixbar.com`.
 2. Open Sitemaps and submit the full URL `https://getmixbar.com/sitemap.xml`. If the UI rejects a relative entry, the full URL removes property/path ambiguity.
 3. Use URL Inspection → Test live URL for the home page and the three guides, then Request indexing.
 4. Check Pages, HTTPS, Core Web Vitals, and Enhancements weekly. Indexing can take days and is not guaranteed.
 
-## 8. Consent verification checklist
+## 9. Consent verification checklist
 
-- Fresh private window: no `_ga`, `_fbp`, GTM, Analytics, or Meta network request before a choice.
+- Fresh private window: no `_ga`, `_fbp`, `_ttp`, GTM, Analytics, Meta, or TikTok network request before a choice.
 - Reject optional: no measurement request; checkout still works and contains no MixBar client reference.
-- Analytics only: Google loads, Meta does not; checkout contains an `mba_...` opaque reference and safe UTM values.
-- Accept all: Google and Meta load; checkout contains an `mbm_...` opaque reference.
+- Analytics only: Google loads; Meta and TikTok do not. Checkout contains an `mba_...` opaque reference and safe UTM values.
+- Accept all: Google, Meta, and TikTok load; checkout contains an `mbm_...` opaque reference.
 - Preferences: switching back to denied sends a consent update, stops further custom events, and deletes known first-party analytics cookies where possible.
 - No event payload contains email, name, phone, support message, Stripe Checkout Session ID, or URL query/hash.
 - One page load creates at most one custom `page_view`.
 
-## 9. Measurement and dashboard
+## 10. Measurement and dashboard
 
 Use a free Looker Studio report connected to GA4, Google Ads, and (when available) a manually maintained Meta spend sheet. Do not add paid data infrastructure yet.
 
