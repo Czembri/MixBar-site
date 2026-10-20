@@ -315,7 +315,7 @@
           <h2>The tab you want.<br>Not the whole browser.</h2>
           <p>Playing tabs sit underneath their browser, so the relationship is obvious. Set a quiet default for a playlist, mute a noisy page, and let MixBar remember it by URL.</p>
           <div class="browser-badges" aria-label="Browser support">
-            <span>Safari</span><span>Chrome</span><span>Opera</span><span class="muted">Firefox · app level</span>
+            <span>Safari</span><span>Chrome</span><span>Opera</span><span class="muted">Firefox · audio processes</span>
           </div>
         </div>
         <div class="browser-stack reveal" aria-hidden="true">
@@ -343,7 +343,7 @@
             <strong role="cell">Opera</strong><span role="cell" data-label="App volume">Included</span><span role="cell" data-label="Tab volume">Included</span><span role="cell" data-label="How it works">Free MixBar companion extension</span>
           </div>
           <div class="compatibility-row" role="row">
-            <strong role="cell">Firefox</strong><span role="cell" data-label="App volume">Included</span><span role="cell" data-label="Tab volume">Not available</span><span role="cell" data-label="How it works">Firefox app-level control</span>
+            <strong role="cell">Firefox</strong><span role="cell" data-label="App volume">Included</span><span role="cell" data-label="Tab volume">Not available</span><span role="cell" data-label="How it works">Independent detected audio processes</span>
           </div>
         </div>
         <p class="compatibility-note">Safari tab control works with standard HTML audio and video. Web Audio-only, protected, and some embedded players remain controllable through Safari’s app-level slider.</p>
@@ -414,7 +414,7 @@
       <div class="section-heading reveal"><div class="eyebrow">Good to know</div><h2>Questions, answered.</h2></div>
       <div class="faq-list">
         <details><summary>Why does MixBar need System Audio Recording access?</summary><p>That is Apple’s name for the permission used to access an app’s outgoing audio stream. MixBar uses it only to change output volume locally. Microphone controls change device settings without capturing audio.</p></details>
-        <details><summary>Does every browser support individual tab volume?</summary><p>Safari works with standard HTML audio and video. Chrome and Opera use the optional MixBar extension and require you to choose which tabs to control. Firefox is controlled at the application level.</p></details>
+        <details><summary>Does every browser support individual tab volume?</summary><p>Safari works with standard HTML audio and video. Chrome and Opera use the optional MixBar extension and require you to choose which tabs to control. Firefox does not expose named tab audio, but MixBar can independently control each detected Firefox audio subprocess; one subprocess may contain more than one tab.</p></details>
         <details><summary>Will MixBar remember my settings?</summary><p>Yes. App settings are stored by bundle identifier, while supported browser-tab settings are remembered by URL.</p></details>
         <details><summary>What is Audio Autopilot?</summary><p>Audio Autopilot saves your complete mix as a scene and can activate it when an app plays, a website has media, a particular output is connected, or a time window begins. It restores the previous mix when the trigger ends, and all rules stay on your Mac.</p></details>
         <details><summary>Can every app, subprocess, and browser tab have different EQ settings?</summary><p>Yes. Expand an app to reach each detected Core Audio subprocess, or open EQ beside a controlled Chrome or Opera tab. Bass, Mid, and Treble range from −12 dB to +12 dB, and MixBar remembers every curve.</p></details>
@@ -467,7 +467,7 @@
 
   <script src="site-config.js?v=20261013-2"></script>
   <script src="script.js?v=20261002-3"></script>
-  <script src="translations.js?v=20261013-1"></script>
+  <script src="translations.js?v=20261020-1"></script>
   <script src="i18n.js"></script>
 </body>
 </html>
