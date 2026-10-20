@@ -1,9 +1,9 @@
 {
-  "version": "1.9.5",
-  "build": 16,
+  "version": "1.9.6",
+  "build": 17,
   "releaseType": "fix",
   "entitlementVersion": "1.9.4",
-  "downloadURL": "https://getmixbar.com/restore?version=1.9.5",
+  "downloadURL": "https://getmixbar.com/restore?version=1.9.6",
   "purchaseURL": "https://buy.stripe.com/14A4gydeS30BgJf1r51gs01",
-  "notes": "Adds clear free-fix and paid-feature update notifications with version-bound downloads."
+  "notes": "Improves purchase recovery for PayPal customers who contact support from a different email address."
 }
