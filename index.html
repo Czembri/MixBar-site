@@ -27,34 +27,46 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "MixBar",
-      "url": "https://getmixbar.com/",
-      "image": "https://getmixbar.com/assets/mixbar-social-card.png",
-      "description": "Independent volume control and EQ for Mac apps and supported browser tabs.",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "macOS 14.2 or later",
-      "softwareVersion": "1.9.2",
-      "softwareRequirements": "macOS 14.2 or later",
-      "featureList": [
-        "Per-app volume and mute",
-        "Three-band EQ for apps and supported browser tabs",
-        "Supported Safari, Chrome, and Opera tab volume",
-        "Audio Autopilot scenes and triggers",
-        "AirPlay and Bluetooth output switching"
-      ],
-      "offers": {
-        "@type": "Offer",
-        "price": "21.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://getmixbar.com/#pricing"
-      },
-      "author": {
-        "@type": "Organization",
-        "name": "Nostar Sp. z o.o.",
-        "url": "https://getmixbar.com/"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://getmixbar.com/#website",
+          "url": "https://getmixbar.com/",
+          "name": "MixBar",
+          "alternateName": "MixBar for Mac"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://getmixbar.com/#software",
+          "name": "MixBar",
+          "url": "https://getmixbar.com/",
+          "image": "https://getmixbar.com/assets/mixbar-social-card.png",
+          "description": "Independent volume control and EQ for Mac apps and supported browser tabs.",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "macOS 14.2 or later",
+          "softwareVersion": "1.9.2",
+          "softwareRequirements": "macOS 14.2 or later",
+          "featureList": [
+            "Per-app volume and mute",
+            "Three-band EQ for apps and supported browser tabs",
+            "Supported Safari, Chrome, and Opera tab volume",
+            "Audio Autopilot scenes and triggers",
+            "AirPlay and Bluetooth output switching"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "21.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://getmixbar.com/#pricing"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Nostar Sp. z o.o.",
+            "url": "https://getmixbar.com/"
+          }
+        }
+      ]
     }
   </script>
 </head>
@@ -73,8 +85,8 @@
         <a href="#privacy">Privacy</a>
         <a href="#pricing">Pricing</a>
       </div>
-      <a class="nav-restore" href="restore.html">Restore purchase</a>
-      <a class="nav-contact" href="contact.html">Contact</a>
+      <a class="nav-restore" href="restore">Restore purchase</a>
+      <a class="nav-contact" href="contact">Contact</a>
       <a class="button button-small checkout-link" href="https://buy.stripe.com/14A4gydeS30BgJf1r51gs01" rel="noopener" target="_blank">Buy MixBar</a>
     </nav>
   </header>
@@ -84,10 +96,10 @@
       <div class="hero-copy reveal">
         <div class="eyebrow"><span></span> Native for macOS 14.2+</div>
         <h1>Every app.<br>Every tab.<br><em>Your volume.</em></h1>
-        <p class="hero-lede">Turn down a loud meeting, keep music in the background, or silence one browser tab—without changing everything else.</p>
+        <p class="hero-lede">MixBar is a native Mac volume mixer for independent app and supported browser-tab volume, mute, and EQ—without changing everything else.</p>
         <div class="hero-actions">
           <a class="button button-primary checkout-link" href="https://buy.stripe.com/14A4gydeS30BgJf1r51gs01" rel="noopener" target="_blank">Buy MixBar — $21 once</a>
-          <a class="text-link" href="restore.html">Already purchased? Download again</a>
+          <a class="text-link" href="restore">Already purchased? Download again</a>
         </div>
         <ul class="trust-list" aria-label="Product benefits">
           <li>No subscription</li>
@@ -391,7 +403,7 @@
             <li>At least two years of compatibility and maintenance updates</li>
           </ul>
           <a class="button button-primary button-full checkout-link" href="https://buy.stripe.com/14A4gydeS30BgJf1r51gs01" rel="noopener" target="_blank">Buy MixBar — $21 once</a>
-          <a class="restore-purchase-link" href="restore.html">Already purchased? Download again</a>
+          <a class="restore-purchase-link" href="restore">Already purchased? Download again</a>
           <p class="price-note">Secure one-time payment by Stripe. Local taxes may apply.</p>
           <div class="checkout-trust" aria-label="Purchase details"><span>Stripe checkout</span><span>Instant private download</span><span>14-day refund policy</span></div>
         </div>
@@ -422,13 +434,13 @@
         <p class="section-intro">Practical explanations for controlling app and browser audio on macOS—plus the limits worth knowing before installing anything.</p>
       </div>
       <div class="learn-grid">
-        <a class="learn-card reveal" href="guides/mac-volume-mixer.html">
+        <a class="learn-card reveal" href="guides/mac-volume-mixer">
           <span>Guide</span><h3>Mac volume mixers explained</h3><p>What macOS includes, what it leaves out, and what to check before choosing an audio utility.</p>
         </a>
-        <a class="learn-card reveal" href="guides/control-volume-per-app-mac.html">
+        <a class="learn-card reveal" href="guides/control-volume-per-app-mac">
           <span>How to</span><h3>Control volume per app on Mac</h3><p>Balance calls, music, games, and notifications independently in a few clear steps.</p>
         </a>
-        <a class="learn-card reveal" href="guides/control-chrome-tab-volume-mac.html">
+        <a class="learn-card reveal" href="guides/control-chrome-tab-volume-mac">
           <span>Browser audio</span><h3>Control individual Chrome tab volume</h3><p>Choose a playing tab, change its level, and keep the browser master intact.</p>
         </a>
       </div>
@@ -448,7 +460,7 @@
     <div class="shell footer-grid">
       <a class="brand" href="#top"><img src="assets/mixbar-mark.svg" width="30" height="30" alt=""><span>MixBar</span></a>
       <p>Independent volume control for Mac.</p>
-      <div><a href="guides/mac-volume-mixer.html">Mac audio guides</a><a href="install.html">Install guide</a><a href="restore.html">Restore purchase</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a><a href="contact.html">Contact</a></div>
+      <div><a href="guides/mac-volume-mixer">Mac audio guides</a><a href="install">Install guide</a><a href="restore">Restore purchase</a><a href="privacy">Privacy</a><a href="terms">Terms</a><a href="refunds">Refunds</a><a href="contact">Contact</a></div>
       <small>© <span id="year"></span> Nostar Sp. z o.o.</small>
     </div>
   </footer>

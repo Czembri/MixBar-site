@@ -2,61 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://getmixbar.com/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://getmixbar.com/install.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <loc>https://getmixbar.com/install</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://getmixbar.com/restore.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <loc>https://getmixbar.com/restore</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://getmixbar.com/contact.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <loc>https://getmixbar.com/contact</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://getmixbar.com/guides/mac-volume-mixer.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <loc>https://getmixbar.com/guides/mac-volume-mixer</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://getmixbar.com/guides/control-volume-per-app-mac.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <loc>https://getmixbar.com/guides/control-volume-per-app-mac</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://getmixbar.com/guides/control-chrome-tab-volume-mac.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <loc>https://getmixbar.com/guides/control-chrome-tab-volume-mac</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://getmixbar.com/privacy.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <loc>https://getmixbar.com/privacy</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://getmixbar.com/terms.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <loc>https://getmixbar.com/terms</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://getmixbar.com/refunds.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <loc>https://getmixbar.com/refunds</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>

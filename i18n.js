@@ -58,8 +58,9 @@
 
   function preserveLanguageInLinks(language) {
     const sandboxMode = new URLSearchParams(location.search).get("sandbox") === "1";
-    for (const link of document.querySelectorAll('a[href$=".html"], a[href*=".html?"]')) {
+    for (const link of document.querySelectorAll("a[href]")) {
       const original = link.getAttribute("href");
+      if (!original || original.startsWith("#")) continue;
       const url = new URL(original, location.href);
       if (url.origin !== location.origin) continue;
       url.searchParams.set("lang", language);

@@ -9,26 +9,52 @@
   <meta property="og:title" content="Mac volume mixers explained — MixBar">
   <meta property="og:description" content="Understand per-app volume control on macOS, browser-tab limits, permissions, and audio-driver tradeoffs.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://getmixbar.com/guides/mac-volume-mixer.html">
+  <meta property="og:url" content="https://getmixbar.com/guides/mac-volume-mixer">
   <meta property="og:image" content="https://getmixbar.com/assets/mixbar-social-card.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://getmixbar.com/guides/mac-volume-mixer.html">
+  <link rel="canonical" href="https://getmixbar.com/guides/mac-volume-mixer">
   <title>Mac Volume Mixer: Per-App Volume on macOS | MixBar</title>
   <link rel="icon" href="../assets/mixbar-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css?v=20261015-1">
   <link rel="stylesheet" href="../guides.css?v=20261015-1">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Mac Volume Mixer: Per-App Volume on macOS",
+          "description": "What a Mac volume mixer does, why macOS has no built-in per-app sliders, and how to choose a private, driver-free volume mixer for your Mac.",
+          "image": "https://getmixbar.com/assets/mixbar-social-card.png",
+          "datePublished": "2026-10-15",
+          "dateModified": "2026-10-20",
+          "mainEntityOfPage": "https://getmixbar.com/guides/mac-volume-mixer",
+          "author": { "@type": "Organization", "name": "Nostar Sp. z o.o.", "url": "https://getmixbar.com/" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "MixBar", "item": "https://getmixbar.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Mac volume mixer", "item": "https://getmixbar.com/guides/mac-volume-mixer" }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
-  <header class="site-header"><nav class="nav shell" aria-label="Main navigation"><a class="brand" href="../index.html"><img src="../assets/mixbar-mark.svg" width="36" height="36" alt=""><span>MixBar</span></a><div class="nav-links"><a href="../index.html#features">Features</a><a href="../index.html#browsers">Browsers</a><a href="../index.html#pricing">Pricing</a></div><a class="button button-small" href="../index.html#pricing">Get MixBar</a></nav></header>
+  <header class="site-header"><nav class="nav shell" aria-label="Main navigation"><a class="brand" href="../"><img src="../assets/mixbar-mark.svg" width="36" height="36" alt=""><span>MixBar</span></a><div class="nav-links"><a href="../#features">Features</a><a href="../#browsers">Browsers</a><a href="../#pricing">Pricing</a></div><a class="button button-small" href="../#pricing">Get MixBar</a></nav></header>
   <main class="guide-page shell">
-    <div class="guide-breadcrumbs"><a href="../index.html">MixBar</a> / Guides / Mac volume mixer</div>
-    <header class="guide-hero"><div class="eyebrow">Mac audio guide</div><h1>What is a Mac volume mixer?</h1><p class="lede">A Mac volume mixer gives each sound-producing application its own level and mute control. That solves a simple problem the standard macOS volume control does not: keeping a call clear while music, games, videos, and notifications run at different levels.</p><div class="guide-meta"><span>Updated October 15, 2026</span><span>7 minute read</span><span>macOS 14.2+</span></div></header>
+    <div class="guide-breadcrumbs"><a href="../">MixBar</a> / Guides / Mac volume mixer</div>
+    <header class="guide-hero"><div class="eyebrow">Mac audio guide</div><h1>What is a Mac volume mixer?</h1><p class="lede">A Mac volume mixer gives each sound-producing application its own level and mute control. That solves a simple problem the standard macOS volume control does not: keeping a call clear while music, games, videos, and notifications run at different levels.</p><div class="guide-meta"><span>Updated October 20, 2026</span><span>7 minute read</span><span>macOS 14.2+</span></div></header>
     <div class="guide-layout">
       <article class="guide-content">
         <h2 id="built-in">Does macOS have a built-in volume mixer?</h2>
         <p>macOS provides a master output volume and, in many apps, a volume control inside the app itself. It does not provide a Windows-style system panel with a separate slider for every application. If Spotify is too loud during a FaceTime call, the standard macOS control changes both together.</p>
         <p>A third-party mixer fills that gap by identifying active audio processes, changing their relative gain, and sending the result to your selected output. Modern mixers can use Apple’s Core Audio process-tap APIs on macOS 14.2 or later instead of installing a kernel extension.</p>
         <div class="guide-callout"><strong>The useful distinction</strong>Master volume changes the complete output. Per-app volume changes one source while preserving the balance of everything else.</div>
+        <h2 id="macbook">Does a MacBook have a volume mixer?</h2>
+        <p>MacBook Air and MacBook Pro use the same macOS master-volume behavior as other Macs: the keyboard keys change the complete output, not individual apps. A compatible third-party MacBook volume mixer can add separate app controls. MixBar supports Macs running macOS 14.2 or later, including Apple silicon and supported Intel models.</p>
         <h2 id="features">What should a Mac volume mixer include?</h2>
         <table class="guide-table"><thead><tr><th>Capability</th><th>Why it matters</th></tr></thead><tbody><tr><td>Per-app volume and mute</td><td>Balance calls, music, games, videos, and alerts independently.</td></tr><tr><td>Persistent settings</td><td>Restore a preferred level when an app starts again.</td></tr><tr><td>Clear process grouping</td><td>Keep browser helpers and background processes understandable.</td></tr><tr><td>Local processing</td><td>Avoid recording or uploading the audio being controlled.</td></tr><tr><td>Safe failure behavior</td><td>Let normal sound continue if processing cannot start.</td></tr><tr><td>Honest browser support</td><td>Distinguish whole-browser volume from individual-tab control.</td></tr></tbody></table>
         <h2 id="tabs">Apps and browser tabs are not the same</h2>
@@ -40,11 +66,11 @@
         <p>A virtual audio device is useful for advanced routing and recording workflows, but it adds another system component to configure. A process-tap mixer can provide everyday per-app control without permanently replacing the normal output device. Choose based on the job: complex studio routing may need a virtual device; daily volume balancing often does not.</p>
         <h2 id="mixbar">Where MixBar fits</h2>
         <p>MixBar is a native menu-bar mixer for macOS 14.2 or later. It combines per-app volume and mute with three-band EQ, saved settings, Audio Autopilot scenes, output switching, and supported Safari, Chrome, and Opera tab controls. It is a $21 one-time purchase with all MixBar 1.x updates included.</p>
-        <div class="guide-cta"><h2>Give every app its own volume.</h2><p>MixBar is signed, notarized, native on Apple silicon and Intel, and does not install a permanent virtual audio driver.</p><a class="button button-primary" href="../index.html#pricing">See MixBar and pricing</a></div>
+        <div class="guide-cta"><h2>Give every app its own volume.</h2><p>MixBar is signed, notarized, native on Apple silicon and Intel, and does not install a permanent virtual audio driver.</p><a class="button button-primary" href="../#pricing">See MixBar and pricing</a></div>
       </article>
-      <aside class="guide-aside"><strong>In this guide</strong><a href="#built-in">Built-in Mac controls</a><a href="#features">What to look for</a><a href="#tabs">Browser tabs</a><a href="#permissions">Audio permission</a><a href="#drivers">Driver tradeoffs</a><a href="#mixbar">How MixBar fits</a></aside>
+      <aside class="guide-aside"><strong>In this guide</strong><a href="#built-in">Built-in Mac controls</a><a href="#macbook">MacBook volume mixer</a><a href="#features">What to look for</a><a href="#tabs">Browser tabs</a><a href="#permissions">Audio permission</a><a href="#drivers">Driver tradeoffs</a><a href="#mixbar">How MixBar fits</a></aside>
     </div>
   </main>
-  <footer><div class="shell footer-grid"><a class="brand" href="../index.html"><img src="../assets/mixbar-mark.svg" width="30" height="30" alt=""><span>MixBar</span></a><p>Independent volume control for Mac.</p><div><a href="control-volume-per-app-mac.html">Per-app volume guide</a><a href="control-chrome-tab-volume-mac.html">Chrome tab guide</a><a href="../privacy.html">Privacy</a><a href="../contact.html">Contact</a></div><small>© 2026 Nostar Sp. z o.o.</small></div></footer>
+  <footer><div class="shell footer-grid"><a class="brand" href="../"><img src="../assets/mixbar-mark.svg" width="30" height="30" alt=""><span>MixBar</span></a><p>Independent volume control for Mac.</p><div><a href="control-volume-per-app-mac">Per-app volume guide</a><a href="control-chrome-tab-volume-mac">Chrome tab guide</a><a href="../privacy">Privacy</a><a href="../contact">Contact</a></div><small>© 2026 Nostar Sp. z o.o.</small></div></footer>
 </body>
 </html>

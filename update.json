@@ -1,6 +1,6 @@
 {
   "version": "1.9.2",
   "build": 12,
-  "downloadURL": "https://getmixbar.com/restore.html",
+  "downloadURL": "https://getmixbar.com/restore",
   "notes": "Adds reviewed Chrome and Opera tab-control installation, production browser bridge support, and release-readiness fixes."
 }
