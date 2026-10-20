@@ -1,9 +1,9 @@
 {
-  "version": "1.9.4",
-  "build": 15,
-  "releaseType": "feat",
+  "version": "1.9.5",
+  "build": 16,
+  "releaseType": "fix",
   "entitlementVersion": "1.9.4",
-  "downloadURL": "https://getmixbar.com/restore?version=1.9.4",
+  "downloadURL": "https://getmixbar.com/restore?version=1.9.5",
   "purchaseURL": "https://buy.stripe.com/14A4gydeS30BgJf1r51gs01",
-  "notes": "Adds clearer, grouped audio-source controls and release-readiness improvements."
+  "notes": "Adds clear free-fix and paid-feature update notifications with version-bound downloads."
 }
