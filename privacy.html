@@ -4,6 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c1016">
+  <meta name="description" content="How MixBar handles local audio, website analytics choices, purchases, licenses, and support data.">
+  <meta property="og:title" content="Privacy — MixBar">
+  <meta property="og:description" content="How MixBar handles local audio, website analytics choices, purchases, licenses, and support data.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getmixbar.com/privacy">
+  <meta property="og:image" content="https://getmixbar.com/assets/mixbar-social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy — MixBar">
+  <meta name="twitter:description" content="How MixBar handles local audio, website analytics choices, purchases, licenses, and support data.">
+  <meta name="twitter:image" content="https://getmixbar.com/assets/mixbar-social-card.png">
   <link rel="canonical" href="https://getmixbar.com/privacy">
   <title>Privacy — MixBar</title>
   <link rel="icon" href="assets/mixbar-mark.svg" type="image/svg+xml">
@@ -14,7 +24,7 @@
   <main class="legal shell">
     <p class="eyebrow">Privacy policy</p>
     <h1>Your audio stays on your Mac.</h1>
-    <p class="updated">Last updated October 15, 2026</p>
+    <p class="updated">Last updated October 20, 2026</p>
     <p>MixBar is designed to work without collecting personal information. Audio is processed locally, in memory, for the purpose of applying the volume and mute settings you choose.</p>
     <h2>Data controller</h2>
     <p>The data controller for the website, purchase records, and support requests is Nostar Sp. z o.o., registered office: ul. Półwiejska 17/26, 61-888 Poznań, Poland; KRS 0000992670; Tax ID (NIP) 7812040401. Use the contact form for privacy requests.</p>
@@ -26,8 +36,11 @@
     <p>Chrome and Opera tab control applies only to tabs that you explicitly choose through the MixBar extension. Safari tab control uses the bundled Safari extension and sends the current tab title, address, and media playback state only to the MixBar app on your Mac. Audio Autopilot scenes, triggers, and recovery snapshots are stored locally in macOS preferences. MixBar does not read browser history, bookmarks, passwords, or form data, and browser metadata is not uploaded.</p>
     <h2>Chrome Web Store Limited Use</h2>
     <p>MixBar’s use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements. Information from a tab selected by the user is used only to provide local tab-audio controls, is not used for advertising, and is not sold or transferred to third parties.</p>
+    <h2>Website analytics and advertising</h2>
+    <p>Optional website analytics and advertising tags are disabled until you make a choice. If you allow analytics, MixBar uses Google Analytics to measure page views, download clicks, checkout starts, outbound clicks, and purchases confirmed by Stripe. If you also allow marketing, MixBar may use Meta Pixel to measure page views, product-page views, and checkout starts. The MixBar app itself does not include an advertising or analytics SDK.</p>
+    <p>Your choice is saved in local storage and can be changed with the Cookie settings button. When analytics is allowed, the site creates a random identifier and may attach it and non-personal UTM campaign parameters to the Stripe checkout link. It does not put your name, email address, payment details, support message, or Checkout Session ID into analytics events. Google Consent Mode v2 keeps analytics and advertising storage denied unless you grant the corresponding choice.</p>
     <h2>Website and purchases</h2>
-    <p>This website does not include advertising or first-party analytics. Checkout is hosted by Stripe. Stripe may process payment, billing, device, fraud-prevention, and tax information under its own privacy policy. Complete card details never enter the MixBar app, website, or release service.</p>
+    <p>Checkout is hosted by Stripe. Stripe may process payment, billing, device, fraud-prevention, and tax information under its own privacy policy. Complete card details never enter the MixBar app, website, or release service.</p>
     <p>After payment, the release service verifies the Stripe Checkout Session and streams the installer from private object storage. It receives the Checkout Session identifier needed for verification, but it does not receive complete card details or store audio data.</p>
     <p>To provide purchase restoration, update eligibility, and license activation, the release service stores the checkout email address, Stripe purchase identifiers, purchased feature release, purchase status, purchase time, random installation identifier, hashed license token, activation status, and last validation time. Resend processes the purchase address to deliver one-time download links and activation codes. MixBar stores the license token in the macOS Keychain and normally validates it once per day; after a successful check, the app can remain offline for up to 30 days. Refunds and payment disputes disable the related entitlement. These records are retained while needed to provide the perpetual license, meet legal obligations, and prevent fraud.</p>
     <h2>Contact</h2>
@@ -35,6 +48,9 @@
     <p>For privacy questions, use the <a href="contact">contact form</a>.</p>
   </main>
   <footer><div class="shell footer-grid"><a class="brand" href="/"><img src="assets/mixbar-mark.svg" width="30" height="30" alt=""><span>MixBar</span></a><p>Independent volume control for Mac.</p><div><a href="privacy">Privacy</a><a href="terms">Terms</a><a href="refunds">Refunds</a><a href="contact">Support</a></div><small>© 2026 Nostar Sp. z o.o.</small></div></footer>
+  <script src="marketing-config.js?v=20261020-1"></script>
+  <script src="analytics-core.js?v=20261020-1"></script>
+  <script src="analytics.js?v=20261020-1"></script>
   <script src="translations.js?v=20261020-1"></script>
   <script src="i18n.js"></script>
 </body>

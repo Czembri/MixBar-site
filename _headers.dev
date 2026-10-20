@@ -12,3 +12,6 @@
 
 /site-config.js
   Cache-Control: no-cache, no-store, must-revalidate
+
+/marketing-config.js
+  Cache-Control: no-cache, no-store, must-revalidate
