@@ -9,6 +9,7 @@
     ? config.sandboxRestoreEndpoint
     : config.restoreEndpoint;
   const siteKey = config.turnstileSiteKey || "";
+  const requestedVersion = new URLSearchParams(window.location.search).get("version") || "";
   let turnstileToken = "";
   let widgetID = null;
 
@@ -92,6 +93,7 @@
           email: fields.get("email"),
           company: fields.get("company"),
           startedAt: fields.get("startedAt"),
+          version: requestedVersion,
           turnstileToken
         })
       });

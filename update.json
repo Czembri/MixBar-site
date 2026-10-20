@@ -1,6 +1,9 @@
 {
-  "version": "1.9.2",
-  "build": 12,
-  "downloadURL": "https://getmixbar.com/restore",
-  "notes": "Adds reviewed Chrome and Opera tab-control installation, production browser bridge support, and release-readiness fixes."
+  "version": "1.9.4",
+  "build": 15,
+  "releaseType": "feat",
+  "entitlementVersion": "1.9.4",
+  "downloadURL": "https://getmixbar.com/restore?version=1.9.4",
+  "purchaseURL": "https://buy.stripe.com/14A4gydeS30BgJf1r51gs01",
+  "notes": "Adds clearer, grouped audio-source controls and release-readiness improvements."
 }
